@@ -1,0 +1,28 @@
+openapi: 3.0.0
+
+info:
+  title: Tic Tac Toe
+  description: |
+    This API allows writing down marks on a Tic Tac Toe board
+    and requesting the state of the board or of individual squares.
+  version: 0.0.1
+
+servers:
+  - url: 'https://gitcorp.prod.aws.cloud.ihf/itau-mbi/parametrosc-icaas-v1-aws'
+
+tags:
+  - name: boards
+  - name: teams
+
+paths:
+  /boards:
+    $ref: ./paths/boards/post_boards.yaml
+  /boards/{id_board}:
+    $ref: ./paths/boards/get_boards.yaml
+
+components:
+  schemas:
+    board:
+      $ref: ./schemas/board/200/board.yaml
+    post_board:
+      $ref: ./schemas/board/post_board.yaml

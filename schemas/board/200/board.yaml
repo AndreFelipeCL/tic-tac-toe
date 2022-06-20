@@ -1,0 +1,22 @@
+type: object
+description: New Board Status 200 Response
+properties:
+  id:
+    type: number
+    minimum: 1
+    example: 1
+    readOnly: true
+  teams:
+    type: array
+    maxItems: 2
+    minItems: 2
+    description: The two rivals teams
+    items:
+      $ref: ../../team/team.yaml
+  winnerId:
+    type: number
+    default: null
+    nullable: true
+  matchEnded:
+      type: boolean
+      default: false

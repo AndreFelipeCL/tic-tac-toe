@@ -1,0 +1,15 @@
+get:
+  tags:
+    - boards
+  operationId: get_board_by_id
+  summary: Get the whole board from its ID
+  description: Retrieves the current state of board and the winner
+  parameters:
+    - $ref: ../../parameters/id_board.yaml
+  responses:
+    200:
+      description: The current board for ID
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/board/200/board.yaml

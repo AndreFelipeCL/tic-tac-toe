@@ -1,0 +1,23 @@
+post:
+  tags:
+    - boards
+  summary: Create a new board
+  description: Create a new board and get response with new board updated with ID.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../schemas/board/post_board.yaml
+  responses:
+    200:
+      description: A new board was created succesfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/board/200/board.yaml
+      links:
+        get_current_board_by_id:
+          operationId: get_board_by_id
+          parameters:
+            id_board: $response.body#/id
+          description: The `id` value returned in the response can be used as the `get_board_by_id` parameter in `GET /boards/{id_board}`

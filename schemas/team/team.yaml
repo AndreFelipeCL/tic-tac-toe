@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    type: number
+    minimum: 1
+  teamName:
+    type: string
+  score:
+    type: number
+    minimum: 0

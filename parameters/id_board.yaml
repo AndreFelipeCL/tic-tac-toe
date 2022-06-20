@@ -1,0 +1,8 @@
+name: id_board
+summary: Board ID
+description: Board ID to search
+in: path
+required: true
+schema:
+  type: number
+  minimum: 1
